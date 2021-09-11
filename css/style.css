@@ -6427,14 +6427,14 @@ section.dark {
 .how__graffiti {
   height: 380px;
   width: 100%;
-  background: url("/img/HowWork.png") no-repeat;
+  background: url("img/HowWork.png") no-repeat;
   background-size: contain;
 }
 
 .feedback {
   position: relative;
   height: 700px;
-  background: url("/img/pet2.png");
+  background: url("img/pet2.png");
   background-color: #bd27c3;
 }
 

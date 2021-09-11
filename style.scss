@@ -310,41 +310,57 @@ section {
     &__graffiti {
         height: 380px;
         width: 100%;
-        background: url('img/HowWork.png')no-repeat;
+        background: url('/img/HowWork.png')no-repeat;
         background-size: contain;
     }
 }
-
 .feedback {
     position: relative;
+    width: 100%;
     height: 700px;
-    background: url('img/pet2.png');
-    background-color: $basic*0.9;
-
-    &__slider {
-        position: absolute;
-        min-width: 1024px;
-        height: 450px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        text-align: center;
-        color: #fff;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 160%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $green;
+    input[type="radio"] {
+        position: relative;
+        z-index: 1000;
+        margin: 5px;
+        margin-top: 670px;
+        outline: none;
+        cursor: pointer;
     }
-
+    input[type="radio"]:checked + .feedback__imgbox {
+        z-index: 10;
+        clip-path: circle(1000px at center);
+        transition-delay: 0.7s;
+    }
+     
     &__imgbox {
-        width: 100%;
-        height: 450px;
-
-        img {
-            border-radius: 50%;
-        }
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       transition: .5s;
+       transition-delay: 0s;
+       z-index: 1;
+       clip-path: circle(0px at center);
+       img {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+       }
     }
 }
-
+.feedback .title {
+    position: absolute;
+    top: 60px;
+    z-index: 100;
+}
 footer {
     height: 250px;
     background: $green;

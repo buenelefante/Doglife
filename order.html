@@ -39,15 +39,53 @@
             
         </div>
         <hr>
-        <section class="order">
+        <section class="order dark">
             <div class="title">
                 <h1>Управление бронированием</h1>
                 <img src="img/dog-paw.png" alt="">
             </div>
-            <div class="container">
-                
-
+            <div class="container ">
+                <div class="order__content">
+                    <div class="order-block order-block__left">
+                        <div class="order-block__item">
+                            <h3>Прибытие</h3>
+                            <input type="date" id="in">
+                        </div>
+                        <div class="order-block__item">
+                            <h3>Убытие</h3>
+                            <input type="date" id="out">
+                        </div>
+                        <div class="order-block__item">
+                            <h3>Возраст</h3>
+                            <input type="number" id="age" value="1">
+                        </div>
+                        
+                        <div class="order-block__item">
+                            <h3>Гости</h3>
+                            <input type="number" id="dogs" value="1">
+                           
+                        </div>
+                        <div class="order-block__item">
+                            <h3>Пол</h3>
+                            <input type="radio" class="sex" id="sex1" name="sex">
+                            <label for="sex1">М</label>
+                            <input type="radio" class="sex"  id="sex2"  name="sex">
+                            <label for="sex2">Д</label>
+                        </div>
+                        <div class="order-block__item">
+                            <h3>Вес</h3>
+                            <input type="number" id="weight" value="1">
+                        </div>
+                    </div>
+                    <div class="order-block">
+                        <h3>Особенности здоровья и ухода</h3>
+                        <textarea name="" id="specific" cols="50" rows="9" placeholder="Сообщите если есть проблемы со здоровьем"></textarea>
+                    
+                    </div>
+                </div>
+                <a class="button swiper__button" href="order.html">Бронировать</a>
             </div>
+            
         </section>
         <footer>
             <div class="container">

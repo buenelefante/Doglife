@@ -6449,11 +6449,13 @@ section.dark {
 
 .feedback input[type="radio"] {
   position: relative;
-  z-index: 1000;
+  z-index: 50;
   margin: 5px;
   margin-top: 670px;
   outline: none;
   cursor: pointer;
+  height: 25px;
+  width: 25px;
 }
 
 .feedback input[type="radio"]:checked + .feedback__imgbox {
@@ -6626,9 +6628,9 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 20px;
 }
 
@@ -6930,6 +6932,15 @@ hr {
   }
   .social {
     display: none;
+  }
+  .header__top ul li {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 667px) {
+  .header__top ul li {
+    margin-right: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */

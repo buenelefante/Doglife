@@ -1,130 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бронирование</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бронирование</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <div class="container">
-                <div class="header__top">
-                    <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Ломоносовский р-н, Оржицы</a></li>
-                        <li><a href="mailto:doglife@juji.ru"><i class="fas fa-envelope"></i> doglife@juji.ru</a></li>
-                        <li><a href="tel+:79111212111"><i class="fas fa-phone-alt"></i> +7(911)121 21 11</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
-                        <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
-                        <a href=""><img src="img/insta.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
+  <div class="wrapper">
+    <div class="header">
+      <div class="container">
+        <div class="header__top">
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Ломоносовский р-н, Оржицы</a></li>
+            <li><a href="mailto:doglife@juji.ru"><i class="fas fa-envelope"></i> doglife@juji.ru</a></li>
+            <li><a href="tel+:79111212111"><i class="fas fa-phone-alt"></i> +7(911)121 21 11</a></li>
+          </ul>
+          <div class="social">
+            <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
+            <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
+            <a href=""><img src="img/insta.svg" alt=""></a>
+          </div>
         </div>
-        <div class="container">
-            <nav>
-                <div class="logo"><img src="img/Logo_dog3.png" alt="logo"></div>
-                <ul class="menu">
-                    <li><a href="index.html"><span>Главная</span> </a></li>
-                    <li><a href="index.html#about"><span>О нас</span> </a></li>
-                    <li><a href="service.html"><span>Услуги</span> </a></li>
-                    <li><a href="index.html#price"><span>Цены</span> </a></li>
-                    <li><a href="contact.html"><span>Контакты</span></a></li>
-                </ul>
-            </nav>
-            
-        </div>
-        <hr>
-        <section class="order dark">
-            <div class="title">
-                <h1>Управление бронированием</h1>
-                <img src="img/dog-paw.png" alt="">
-            </div>
-            <div class="container ">
-                <div class="order__content">
-                    <div class="order-block order-block__left">
-                        <div class="order-block__item">
-                            <h3>Прибытие</h3>
-                            <input type="date" id="in">
-                        </div>
-                        <div class="order-block__item">
-                            <h3>Убытие</h3>
-                            <input type="date" id="out">
-                        </div>
-                        <div class="order-block__item">
-                            <h3>Возраст</h3>
-                            <input type="number" id="age" value="1">
-                        </div>
-                        
-                        <div class="order-block__item">
-                            <h3>Гости</h3>
-                            <input type="number" id="dogs" value="1">
-                           
-                        </div>
-                        <div class="order-block__item">
-                            <h3>Пол</h3>
-                            <input type="radio" class="sex" id="sex1" name="sex">
-                            <label for="sex1">М</label>
-                            <input type="radio" class="sex"  id="sex2"  name="sex">
-                            <label for="sex2">Д</label>
-                        </div>
-                        <div class="order-block__item">
-                            <h3>Вес</h3>
-                            <input type="number" id="weight" value="1">
-                        </div>
-                    </div>
-                    <div class="order-block">
-                        <h3>Особенности здоровья и ухода</h3>
-                        <textarea name="" id="specific" cols="50" rows="9" placeholder="Сообщите если есть проблемы со здоровьем"></textarea>
-                    
-                    </div>
-                </div>
-                <a class="button swiper__button" href="order.html">Бронировать</a>
-            </div>
-            
-        </section>
-        <footer>
-            <div class="container">
-                <div class="footer">
-                    <div class="footer__item">
-                        <img src="img/Logo_dog3.png" alt="">
-                    </div>
-                    <div class="footer__item">
-                        <ul>
-                            <li><a href="#about">О нас</a></li>
-                            <li><a href="service.html">Услуги</a></li>
-                            <li><a href="#price">Цены</a></li>
-                            <li><a href="contact.html">Контакты</a></li>
-                        </ul>
-                    </div>
-                   
-                    <div class="footer__item">
-                        <ul class="connect">
-                            <li><a href="mailto:doglife@juji.ru"><i class="fas fa-envelope" ></i>&nbsp; doglife@juji.ru</a>
-                            </li>
-                            <li><a href="tel+7112121121"><i class="fas fa-phone-alt"></i>&nbsp; +7(911)212 11 21</a></li>
-                            <li><a href="tel+7112121121"><i class="fas fa-phone-alt"></i>&nbsp; +7(921)112 11 21</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__item footer__item-last">
-                        <h2>Остались вопросы?</h2>
-                        <a class="button swiper__button" href="contact.html">Задать вопрос</a>
-                        <div class="social">
-                            <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
-                            <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
-                            <a href=""><img src="img/insta.svg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
-        </footer>
+      </div>
     </div>
-    
+    <div class="container">
+      <nav>
+        <div class="logo"><img src="img/Logo_dog3.png" alt="logo"></div>
+        <ul class="menu">
+          <li><a href="index.html"><span>Главная</span> </a></li>
+          <li><a href="index.html#about"><span>О нас</span> </a></li>
+          <li><a href="service.html"><span>Услуги</span> </a></li>
+          <li><a href="index.html#price"><span>Цены</span> </a></li>
+          <li><a href="contact.html"><span>Контакты</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <hr>
+    <section class="order dark">
+      <div class="title">
+        <h1>Управление бронированием</h1>
+        <img src="img/dog-paw.png" alt="">
+      </div>
+      <div class="container ">
+        <div class="order__content">
+          <div class="order-block order-block__left">
+            <div class="order-block__item">
+              <h3>Прибытие</h3>
+              <input type="date" id="in">
+            </div>
+            <div class="order-block__item">
+              <h3>Убытие</h3>
+              <input type="date" id="out">
+            </div>
+            <div class="order-block__item">
+              <h3>Возраст</h3>
+              <input type="number" id="age" value="1">
+            </div>
+
+            <div class="order-block__item">
+              <h3>Гости</h3>
+              <input type="number" id="dogs" value="1">
+
+            </div>
+            <div class="order-block__item">
+              <h3>Пол</h3>
+              <input type="radio" class="sex" id="sex1" name="sex">
+              <label for="sex1">М</label>
+              <input type="radio" class="sex" id="sex2" name="sex">
+              <label for="sex2">Д</label>
+            </div>
+            <div class="order-block__item">
+              <h3>Вес</h3>
+              <input type="number" id="weight" value="1">
+            </div>
+          </div>
+          <div class="order-block">
+            <h3>Особенности здоровья и ухода</h3>
+            <textarea name="" id="specific" cols="50" rows="9"
+              placeholder="Сообщите если есть проблемы со здоровьем"></textarea>
+
+          </div>
+        </div>
+        <a class="button swiper__button" href="order.html">Бронировать</a>
+      </div>
+
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__item">
+            <img src="img/Logo_dog3.png" alt="">
+          </div>
+          <div class="footer__item">
+            <ul>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="service.html">Услуги</a></li>
+              <li><a href="#price">Цены</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__item">
+            <ul class="connect">
+              <li><a href="mailto:doglife@juji.ru"><i class="fas fa-envelope"></i>&nbsp; doglife@juji.ru</a>
+              </li>
+              <li><a href="tel+7112121121"><i class="fas fa-phone-alt"></i>&nbsp; +7(911)212 11 21</a></li>
+              <li><a href="tel+7112121121"><i class="fas fa-phone-alt"></i>&nbsp; +7(921)112 11 21</a></li>
+            </ul>
+          </div>
+          <div class="footer__item footer__item-last">
+            <h2>Остались вопросы?</h2>
+            <a class="button swiper__button" href="contact.html">Задать вопрос</a>
+            <div class="social">
+              <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
+              <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
+              <a href=""><img src="img/insta.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
+    </footer>
+  </div>
+
 </body>
+
 </html>

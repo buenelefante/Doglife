@@ -6364,7 +6364,7 @@ section.dark {
   text-align: center;
   line-height: 2;
   cursor: pointer;
-  background: rgba(31, 32, 65, 0.25);
+  background: rgba(31, 32, 65, 0.05);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -6701,7 +6701,6 @@ hr {
 .title-price {
   height: 122px;
   background: rgba(31, 32, 65, 0.75);
-  background-image: url("img/small-dog.png");
   color: #fff;
   font-size: 30px;
   font-weight: bold;

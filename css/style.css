@@ -6765,6 +6765,28 @@ hr {
   -webkit-box-shadow: 0px 0px 10px rgba(31, 32, 65, 0.25);
           box-shadow: 0px 0px 10px rgba(31, 32, 65, 0.25);
   min-width: 350px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.item-service__triangle {
+  width: 0;
+  height: 0;
+  border-top: 65px solid #99cc33;
+  border-left: 65px solid transparent;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.item-service__triangle p {
+  font-size: 12px;
+  margin-top: -60px;
+  margin-left: -32px;
+  color: white;
+  font-weight: 500;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .item-service__foto {

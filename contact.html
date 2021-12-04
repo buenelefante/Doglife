@@ -85,22 +85,22 @@
               </p>
             </div>
             <div class="contact-content__item">
-              <form action="mail.php"
+              <form action="mail.php" method="POST">
                 <h3>Отправить сообщение</h3>
                 <div class="inputbox">
-                  <input type="text" required />
+                  <input type="text" required name="user_name" />
                   <span>Имя</span>
                 </div>
                 <div class="inputbox">
-                  <input type="email" required />
+                  <input type="email" name="user_mail" required />
                   <span>Email</span>
                 </div>
                 <div class="inputbox">
-                  <input type="tel" required />
+                  <input type="tel" name="user_phone"  required />
                   <span>Телефон</span>
                 </div>
                 <div class="inputbox">
-                  <textarea name="" id=""></textarea>
+                  <textarea name="message" id=""></textarea>
                   <span>Сообщение</span>
                 </div>
                 <div class="inputbox">

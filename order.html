@@ -33,7 +33,7 @@
         <ul class="menu">
           <li><a href="index.html"><span>Главная</span> </a></li>
           <li><a href="index.html#about"><span>О нас</span> </a></li>
-          <li><a href="service.html"><span>Услуги</span> </a></li>
+          <li><a href="index.html#services"><span>Услуги</span> </a></li>
           <li><a href="index.html#price"><span>Цены</span> </a></li>
           <li><a href="contact.html"><span>Контакты</span></a></li>
         </ul>
@@ -47,46 +47,58 @@
         <img src="img/dog-paw.png" alt="">
       </div>
       <div class="container ">
+<form enctype="multipart/form-data"
+                method="post"
+                id="form"
+                onsubmit="send(event, 'order.php')"
+              >
+
         <div class="order__content">
           <div class="order-block order-block__left">
             <div class="order-block__item">
               <h3>Прибытие</h3>
-              <input type="date" id="in">
+              <input type="date" id="in" name="in">
             </div>
             <div class="order-block__item">
               <h3>Убытие</h3>
-              <input type="date" id="out">
+              <input type="date" id="out" name="out">
             </div>
             <div class="order-block__item">
               <h3>Возраст</h3>
-              <input type="number" id="age" value="1">
+              <input type="number" id="age" value="1" name="age">
             </div>
 
             <div class="order-block__item">
-              <h3>Гости</h3>
-              <input type="number" id="dogs" value="1">
-
+              <h3>Вес</h3>
+              <input type="number" id="weight" value="1" name="weight">
             </div>
             <div class="order-block__item">
               <h3>Пол</h3>
-              <input type="radio" class="sex" id="sex1" name="sex">
+              <input type="radio" class="sex" id="sex1" name="sex" >
               <label for="sex1">М</label>
               <input type="radio" class="sex" id="sex2" name="sex">
               <label for="sex2">Д</label>
             </div>
             <div class="order-block__item">
-              <h3>Вес</h3>
-              <input type="number" id="weight" value="1">
+              <h3>Кастрация</h3>
+              <input type="radio" class="scope" id="scope1" name="scope">
+              <label for="scope1">да</label>
+              <input type="radio" class="scope" id="scope2" name="scope">
+              <label for="scope2">нет</label>
             </div>
           </div>
           <div class="order-block">
             <h3>Особенности здоровья и ухода</h3>
-            <textarea name="" id="specific" cols="50" rows="9"
+            <textarea name="health" id="specific" cols="50" rows="9"
               placeholder="Сообщите если есть проблемы со здоровьем"></textarea>
-
+<div class="inputbox">
+                  <input type="submit" class="swiper__button" value="Бронировать" />
+                </div>
           </div>
+          
         </div>
-        <a class="button swiper__button" href="order.html">Бронировать</a>
+        
+</form>
       </div>
 
     </section>
@@ -99,7 +111,7 @@
           <div class="footer__item">
             <ul>
               <li><a href="#about">О нас</a></li>
-              <li><a href="service.html">Услуги</a></li>
+              <li><a href="index.html#services">Услуги</a></li>
               <li><a href="#price">Цены</a></li>
               <li><a href="contact.html">Контакты</a></li>
             </ul>
@@ -128,7 +140,7 @@
       <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
     </footer>
   </div>
-
+<script src="order.js"></script>
 </body>
 
 </html>

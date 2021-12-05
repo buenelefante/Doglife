@@ -1,45 +1,59 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// Файлы phpmailer
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-
+// Переменные, которые отправляет пользователь
 $name = $_POST['user_name'];
-$phone = $_POST['user_phone'];
 $email = $_POST['user_email'];
+$phone = $_POST['user_phone'];
 $message = $_POST['message'];
 
+// Формирование самого письма
+$title = "Письмо с сайта Doglife";
+$body = "
+<h2>Новое письмо</h2>
+<b>Имя:</b> $name<br>
+<b>Телефон</b> $phone<br>
+<b>Почта:</b> $email<br><br>
+<b>Сообщение:</b><br>$message
+";
 
+// Настройки PHPMailer
+$mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.mail.ru';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'vovaslon@mail.ru';                     //SMTP username
-    $mail->Password   = 'pupsik';                               //SMTP password
-    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->isSMTP();   
+    $mail->CharSet = "UTF-8";
+    $mail->SMTPAuth   = true;
+    //$mail->SMTPDebug = 2;
+    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
-    //Recipients
-    $mail->setFrom('vovaslon@mail.ru', 'Customer');
-    $mail->addAddress('northboss@gmail.com', 'Joe User');     //Add a recipient
+    // Настройки вашей почты
+    $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+    $mail->Username   = 'vovaslon'; // Логин на почте
+    $mail->Password   = 'jYYt57uGjxtqGCSxfe4t'; // Пароль на почте
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
+    $mail->setFrom('vovaslon@mail.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
+
+    // Получатель письма
+    $mail->addAddress('volium1987@mail.ru');  
+    $mail->addAddress('northboss@gmail.com'); 
    
+// Отправка сообщения
+$mail->isHTML(true);
+$mail->Subject = $title;
+$mail->Body = $body;    
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Заявка с сайта Doglife';
-    $mail->Body    = .$name . 'Есть вопрос, мой телефон' . $phone . 'почта: ' . $email ' . $message;
+// Проверяем отравленность сообщения
+if ($mail->send()) {$result = "success";} 
+else {$result = "error";}
 
-    $mail->send();
-    echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $result = "error";
+    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
+
+// Отображение результата
+echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);

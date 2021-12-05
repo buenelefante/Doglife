@@ -85,14 +85,14 @@
               </p>
             </div>
             <div class="contact-content__item">
-              <form action="mail.php" method="POST">
+              <form enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'mail.php')">
                 <h3>Отправить сообщение</h3>
                 <div class="inputbox">
                   <input type="text" required name="user_name" />
                   <span>Имя</span>
                 </div>
                 <div class="inputbox">
-                  <input type="email" name="user_mail" required />
+                  <input type="email" name="user_email" required />
                   <span>Email</span>
                 </div>
                 <div class="inputbox">
@@ -130,7 +130,7 @@
               <ul class="connect">
                 <li>
                   <a href="mailto:volium1987@mail.ru"
-                    ><i class="fas fa-envelope"></i> volium1987@mail.ru/a
+                    ><i class="fas fa-envelope"></i> volium1987@mail.ru</a
                   >
                 </li>
                 <li>
@@ -157,5 +157,33 @@
         <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
       </footer>
     </div>
+    <script>
+// Отправка данных на сервер
+function send(event, php){
+console.log("Отправка запроса");
+event.preventDefault ? event.preventDefault() : event.returnValue = false;
+var req = new XMLHttpRequest();
+req.open('POST', php, true);
+req.onload = function() {
+	if (req.status >= 200 && req.status < 400) {
+	json = JSON.parse(this.response); // Ебанный internet explorer 11
+    	console.log(json);
+        
+    	// ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+    	if (json.result == "success") {
+    		// Если сообщение отправлено
+    		alert("Сообщение отправлено");
+    	} else {
+    		// Если произошла ошибка
+    		alert("Ошибка. Сообщение не отправлено");
+    	}
+    // Если не удалось связаться с php файлом
+    } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
+
+// Если не удалось отправить запрос. Стоит блок на хостинге
+req.onerror = function() {alert("Ошибка отправки запроса");};
+req.send(new FormData(event.target));
+}
+</script>
   </body>
 </html>

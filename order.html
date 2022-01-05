@@ -1,146 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Бронируйте заранее места в зоогостинице для собак мелких и средних пород. Ломоносовский р-н. Оржицы.
+  В нашей загородной зоогостинице Ваш любимец будет проживать в теплом доме среди людей, в привычной для него обстановке."
+    />
+    <meta name="robots" content="index,follow" />
+    <title>Гостиница для собак | Бронирование</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Бронирование</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="header">
-      <div class="container">
-        <div class="header__top">
-          <ul>
-            <li><a href="https://goo.gl/maps/XLsqCdqhzMCb7Hx16" target="_blank"><i class="fas fa-map-marker-alt"></i> Ломоносовский р-н, Оржицы</a></li>
-            <li><a href="mailto:volium1987@mail.ru"><i class="fas fa-envelope"></i> volium1987@mail.ru/a></li>
-            <li><a href="tel+:79312525010"><i class="fas fa-phone-alt"></i> +7(931)252 50 10</a></li>
-          </ul>
-          <div class="social">
-            <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
-            <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
-            <a href=""><img src="img/insta.svg" alt=""></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <nav>
-        <div class="logo"><img src="img/Logo_dog3.png" alt="logo"></div>
-        <ul class="menu">
-          <li><a href="index.html"><span>Главная</span> </a></li>
-          <li><a href="index.html#about"><span>О нас</span> </a></li>
-          <li><a href="index.html#services"><span>Услуги</span> </a></li>
-          <li><a href="index.html#price"><span>Цены</span> </a></li>
-          <li><a href="contact.html"><span>Контакты</span></a></li>
-        </ul>
-      </nav>
-
-    </div>
-    <hr>
-    <section class="order dark">
-      <div class="title">
-        <h1>Управление бронированием</h1>
-        <img src="img/dog-paw.png" alt="">
-      </div>
-      <div class="container ">
-<form enctype="multipart/form-data"
-                method="post"
-                id="form"
-                onsubmit="send(event, 'order.php')"
-              >
-
-        <div class="order__content">
-          <div class="order-block order-block__left">
-            <div class="order-block__item">
-              <h3>Прибытие</h3>
-              <input type="date" id="in" name="in">
-            </div>
-            <div class="order-block__item">
-              <h3>Убытие</h3>
-              <input type="date" id="out" name="out">
-            </div>
-            <div class="order-block__item">
-              <h3>Возраст</h3>
-              <input type="number" id="age" value="1" name="age">
-            </div>
-
-            <div class="order-block__item">
-              <h3>Вес</h3>
-              <input type="number" id="weight" value="1" name="weight">
-            </div>
-            <div class="order-block__item">
-              <h3>Пол</h3>
-              <input type="radio" class="sex" id="sex1" name="sex" >
-              <label for="sex1">М</label>
-              <input type="radio" class="sex" id="sex2" name="sex">
-              <label for="sex2">Д</label>
-            </div>
-            <div class="order-block__item">
-              <h3>Кастрация</h3>
-              <input type="radio" class="scope" id="scope1" name="scope">
-              <label for="scope1">да</label>
-              <input type="radio" class="scope" id="scope2" name="scope">
-              <label for="scope2">нет</label>
-            </div>
-          </div>
-          <div class="order-block">
-            <h3>Особенности здоровья и ухода</h3>
-            <textarea name="health" id="specific" cols="50" rows="9"
-              placeholder="Сообщите если есть проблемы со здоровьем"></textarea>
-<div class="inputbox">
-                  <input type="submit" class="swiper__button" value="Бронировать" />
-                </div>
-          </div>
-          
-        </div>
-        
-</form>
-      </div>
-
-    </section>
-    <footer>
-      <div class="container">
-        <div class="footer">
-          <div class="footer__item">
-            <img src="img/Logo_dog3.png" alt="">
-          </div>
-          <div class="footer__item">
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="header__top">
             <ul>
-              <li><a href="#about">О нас</a></li>
-              <li><a href="index.html#services">Услуги</a></li>
-              <li><a href="#price">Цены</a></li>
-              <li><a href="contact.html">Контакты</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__item">
-            <ul class="connect">
-              <li><a href="mailto:volium1987@mail.ru"><i class="fas fa-envelope"></i>&nbsp; volium1987@mail.ru</a>
+              <li>
+                <a href="https://goo.gl/maps/XLsqCdqhzMCb7Hx16" target="_blank"
+                  ><i class="fas fa-map-marker-alt"></i> Ломоносовский р-н,
+                  Оржицы</a
+                >
               </li>
-              <li><a href="tel+79312525010"><i class="fas fa-phone-alt"></i>&nbsp; +7(931)252 50 10</a></li>
-          
+              <li>
+                <a href="mailto:doglife.juji@gmail.com"
+                  ><i class="fas fa-envelope"></i> doglife.juji@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="tel+:79312525010"
+                  ><i class="fas fa-phone-alt"></i> +7(931) 252 50 10</a
+                >
+              </li>
             </ul>
-          </div>
-          <div class="footer__item footer__item-last">
-            <h2>Остались вопросы?</h2>
-            <a class="button swiper__button" href="contact.html">Задать вопрос</a>
             <div class="social">
-              <a href=""><img src="img/face.svg" alt=""></a>&nbsp;
-              <a href=""><img src="img/Vk.svg" alt=""></a>&nbsp;
-              <a href=""><img src="img/insta.svg" alt=""></a>
+              <a href="https://www.instagram.com/doglife_juji/" target="_blank"
+                ><img src="img/face.svg" alt="" /></a
+              >&nbsp;
+              <a href="https://www.facebook.com/IrinaJuji" target="_blank"
+                ><img src="img/insta.svg" alt=""
+              /></a>
             </div>
           </div>
         </div>
       </div>
-      <hr>
-      <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
-    </footer>
-  </div>
-<script src="order.js"></script>
-</body>
+      <div class="container">
+        <nav>
+          <div class="logo"><img src="img/Logo_dog3.png" alt="logo" /></div>
+          <ul class="menu">
+            <li>
+              <a href="index.html"><span>Главная</span> </a>
+            </li>
+            <li>
+              <a href="index.html#about"><span>О нас</span> </a>
+            </li>
+            <li>
+              <a href="index.html#services"><span>Услуги</span> </a>
+            </li>
+            <li>
+              <a href="index.html#price"><span>Цены</span> </a>
+            </li>
+            <li>
+              <a href="contact.html"><span>Контакты</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <hr />
+      <section class="order dark">
+        <div class="title">
+          <h1>Управление бронированием</h1>
+          <img src="img/dog-paw.png" alt="" />
+        </div>
+        <div class="container">
+          <form action="#" id="order" class="order">
+            <div class="order__content">
+              <div class="order-block order-block__left">
+                <div class="order-block__item">
+                  <h3>Прибытие</h3>
+                  <input
+                    class="order__input _req"
+                    type="date"
+                    id="in"
+                    name="in"
+                  />
+                </div>
+                <div class="order-block__item">
+                  <h3>Убытие</h3>
+                  <input
+                    class="order__input _req"
+                    type="date"
+                    id="out"
+                    name="out"
+                  />
+                </div>
+                <div class="order-block__item">
+                  <h3>Возраст</h3>
+                  <input
+                    class="order__input _req"
+                    type="number"
+                    id="age"
+                    name="age"
+                  />
+                </div>
 
+                <div class="order-block__item">
+                  <h3>Вес</h3>
+                  <input
+                    class="order__input _req"
+                    type="number"
+                    id="weight"
+                    name="weight"
+                  />
+                </div>
+                <div class="order-block__item">
+                  <h3>Пол</h3>
+                  <input
+                    id="sex1"
+                    class="order__input"
+                    checked
+                    type="radio"
+                    value="dog"
+                    name="sex"
+                  />
+                  <label for="sex1">М</label>
+                  <input
+                    id="sex2"
+                    class="order__input"
+                    value="bitch"
+                    type="radio"
+                    name="sex"
+                  />
+                  <label for="sex2">Д</label>
+                </div>
+                <div class="order-block__item">
+                  <h3>Стерилизация</h3>
+                  <input
+                    id="scope1"
+                    class="order__input"
+                    value="yes"
+                    type="radio"
+                    name="scope"
+                  />
+                  <label for="scope1">да</label>
+                  <input
+                    id="scope2"
+                    class="order__input"
+                    checked
+                    value="no"
+                    type="radio"
+                    name="scope"
+                  />
+                  <label for="scope2">нет</label>
+                </div>
+                <div class="order-block__item">
+                  <h4>Ваше имя</h4>
+                  <input
+                    class="order__input _req"
+                    type="text"
+                    id="name"
+                    name="name"
+                  />
+                </div>
+                <div class="order-block__item">
+                  <h4>Телефон</h4>
+                  <input
+                    class="order__input _req"
+                    type="text"
+                    id="phone"
+                    name="phone"
+                  />
+                </div>
+                <div class="order-block__item">
+                  <h4>Email</h4>
+                  <input
+                    class="order__input _req"
+                    type="email"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+              </div>
+              <div class="order-block">
+                <h3>Особенности здоровья и ухода</h3>
+                <textarea
+                  class="order__input"
+                  name="health"
+                  id="specific"
+                  placeholder="Сообщите если есть проблемы со здоровьем"
+                ></textarea>
+                <div class="inputbox">
+                  <button type="submit" class="form__button swiper__button">
+                    Бронировать
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="footer">
+            <div class="footer__item">
+              <img class="footer__logo" src="img/Logo_dog3.png" alt="" />
+            </div>
+            <div class="footer__item">
+              <ul>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#services">Услуги</a></li>
+                <li><a href="index.html#price">Цены</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__item">
+              <ul class="connect">
+                <li>
+                  <a href="mailto:doglife.juji@gmail.com"
+                    ><i class="fas fa-envelope"></i>&nbsp;
+                    doglife.juji@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a href="tel+79312525010"
+                    ><i class="fas fa-phone-alt"></i>&nbsp; +7(931) 252 50 10</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer__item footer__item-last">
+              <h2>Остались вопросы?</h2>
+              <a class="button swiper__button" href="contact.html"
+                >Задать вопрос</a
+              >
+              <div class="social">
+                <a href="https://www.facebook.com/IrinaJuji" target="_blank"
+                  ><img src="img/face.svg" alt="" /></a
+                >&nbsp;
+                <a
+                  href="https://www.instagram.com/doglife_juji/"
+                  target="_blank"
+                  ><img src="img/insta.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
+      </footer>
+    </div>
+    <script src="order.js"></script>
+  </body>
 </html>

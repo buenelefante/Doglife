@@ -90,6 +90,9 @@ nav {
   li {
     list-style: none;
     margin-right: 15px;
+    @media (max-width: 400px) {
+      margin-right: 10px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -98,7 +101,9 @@ nav {
       color: $text;
       font-size: 16px;
       font-weight: 600;
-
+      @media (max-width: 400px) {
+        font-size: 14px;
+      }
       &:hover {
         color: $basic;
       }
@@ -253,7 +258,7 @@ section {
   text-align: center;
   line-height: 2;
   cursor: pointer;
-  background: $dark5;
+  background: $dark25;
   transition: all 0.5s;
 }
 
@@ -272,7 +277,7 @@ section {
   line-height: 160%;
   letter-spacing: 0.5px;
   h4 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     margin: 46px;
     line-height: 1.4;
@@ -416,7 +421,9 @@ footer {
 .footer {
   display: flex;
   justify-content: space-between;
-
+  &__logo {
+    width: 100%;
+  }
   &__item {
     ul.connect li a {
       color: #fff;
@@ -475,7 +482,7 @@ hr {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 0 5px;
+    margin: 0 5px 15px;
   }
 }
 
@@ -640,29 +647,59 @@ hr {
 }
 
 .order {
-  padding: 80px 5px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(222, 163, 199, 0.8) url("/img/cool_dog.gif") center / 463px
+      no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+  }
+  &._sending::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__input {
+    &._error {
+      box-shadow: 0 0 8px orangered;
+      border-radius: 5px;
+    }
+  }
   &__content {
     margin-top: 100px;
     margin-bottom: 60px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 400px;
   }
   &-block {
     textarea {
       border-radius: 4px;
       border: 1px solid $dark25;
       padding: 10px;
+      margin-bottom: 42px;
+      min-height: 170px;
+      min-width: 300px;
+      resize: vertical;
     }
+
     &__item {
       input[type="date"],
-      input[type="number"] {
+      input[type="number"],
+      input[type="text"],
+      input[type="email"] {
         height: 37px;
         width: 150px;
         border-radius: 4px;
         border: 1px solid $dark25;
         padding-left: 10px;
-        font-size: 16px;
-        color: $dark25;
+        font-size: 14px;
+        color: $dark50;
         cursor: pointer;
       }
       input[type="radio"] {
@@ -671,7 +708,7 @@ hr {
         display: none;
       }
       input[type="radio"]:checked + label {
-        background: $basic;
+        background: $green;
         color: #fff;
       }
       label {
@@ -691,6 +728,10 @@ hr {
     }
     h3 {
       margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    h4 {
+      color: $dark25;
       text-transform: uppercase;
     }
     &__left {
@@ -713,7 +754,7 @@ hr {
     text-align: left;
     max-width: 280px;
     h3 {
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       color: #99cc33;
     }
     p {
@@ -729,56 +770,105 @@ hr {
     }
   }
 }
-.inputbox {
-  position: relative;
+.form * {
+  outline: none;
+}
+.form {
+  &__body {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(31, 32, 65, 0.25) url("/img/mail-hearts.gif") center /
+        180px no-repeat;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &._sending::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.form__item {
+  margin: 0 0 15px 0;
+}
+.form__label {
+  font-size: 16px;
+  display: block;
+  margin: 0 0 5px 0;
+  color: $dark50;
+}
+.form__input {
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-bottom: 1px solid $dark75;
   width: 100%;
-  margin-top: 10px;
-  input,
-  textarea {
-    width: 100%;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    border: none;
-    border-bottom: 2px solid $dark25;
-    outline: none;
-    resize: none;
-    &:focus ~ span,
-    &:valid ~ span {
-      color: $basic;
-      font-size: 12px;
-      transform: translateY(-20px);
-    }
+  transition: all 0.3s ease;
+  &:focus {
+    box-shadow: 0 0 8px $green;
+    border-radius: 5px;
+    border-bottom: none;
   }
-  input[type="submit"] {
-    background: $basic;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 14px 30px;
-    background: linear-gradient(180deg, #dea3c7 0%, #d22bd9 100%);
-    border-radius: 30px;
-    &:hover {
-      background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(222, 163, 199, 0.8) 0%,
-        rgba(210, 43, 217, 0.8) 100%
-      );
-    }
-    &:active {
-      box-shadow: 2px 2px 2px $dark75;
-    }
+  &._error {
+    box-shadow: 0 0 8px orangered;
+    border-radius: 5px;
   }
-  span {
+}
+textarea.form__input {
+  min-height: 80px;
+  resize: vertical;
+}
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 8px orangered;
+}
+.checkbox__input {
+  display: none;
+  &:checked + .checkbox__label::after {
+    transform: scale(1);
+  }
+}
+
+.checkbox__label {
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-size: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  &::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 18px;
+    height: 18px;
+    background-color: $green;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
     position: absolute;
-    left: 0;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    pointer-events: none;
-    transition: 0.5s;
-    color: $dark50;
+    top: 4px;
+    left: 4px;
+    border-radius: 4px;
+    background-color: $basic;
+    transform: scale(0);
+    transition: all 0.5s ease;
   }
+}
+.form__button {
+  width: 80%;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.5px;
 }
 
 // todo ---------------- adaptive ---------------------
@@ -794,6 +884,13 @@ hr {
     ul li {
       margin-right: 40px;
     }
+  }
+  .order__content {
+    grid-template-columns: 1fr;
+  }
+  .order-block__left {
+    margin-bottom: 24px;
+    margin-right: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -833,7 +930,15 @@ hr {
   .item-service {
     max-width: 350px;
   }
+  .order-block__left {
+    gap: 45px;
+  }
+  .inputbox {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
+
 @media (max-width: 660px) {
   .header {
     display: none;
@@ -853,9 +958,22 @@ hr {
   .swiper-button-next {
     display: none;
   }
+  .order-block__left {
+    justify-content: space-around;
+    gap: 20px;
+  }
   .footer {
     &__item:nth-child(2) {
       display: none;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .title {
+    margin-bottom: 40px;
+    h1 {
+      font-size: 24px;
+      margin-top: -30px;
     }
   }
 }

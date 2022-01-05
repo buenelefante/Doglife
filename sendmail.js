@@ -2,7 +2,7 @@
 
 // ==========Отправка данных на сервер========
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("order");
+  const form = document.getElementById("form");
   form.addEventListener("submit", formSend);
 
   async function formSend(e) {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (error === 0) {
       form.classList.add("_sending");
-      let response = await fetch("order.php", {
+      let response = await fetch("mail.php", {
         method: "POST",
         body: formData,
       });
@@ -40,9 +40,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const input = formReq[index];
       formRemoveError(input);
 
-      if (input.value === "") {
+      if (input.classList.contains("_email")) {
+        if (emailTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else if (
+        input.getAttribute("type") === "checkbox" &&
+        input.checked === false
+      ) {
         formAddError(input);
         error++;
+      } else {
+        if (input.value === "") {
+          formAddError(input);
+          error++;
+        }
       }
     }
     return error;
@@ -54,5 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
     input.classList.remove("_error");
+  }
+  function emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
 });

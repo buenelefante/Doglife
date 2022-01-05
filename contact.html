@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты</title>
+    <meta name="description" content="Doglife-JuJi зоогостиница для собак мелких и средних пород. Ломоносовский р-н. Оржицы.
+  В нашей загородной зоогостинице Ваш любимец будет проживать в теплом доме среди людей, в привычной для него обстановке.">
+  <meta name="robots" content="index,follow" />
+    <title>Гостиница для собак | Контакты</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -20,8 +23,8 @@
                 >
               </li>
               <li>
-                <a href="mailto:volium1987@mail.ru"
-                  ><i class="fas fa-envelope"></i> volium1987@mail.ru</a
+                <a href="mailto:doglife.juji@gmail.com"
+                  ><i class="fas fa-envelope"></i> doglife.juji@gmail.com</a
                 >
               </li>
               <li>
@@ -31,9 +34,8 @@
               </li>
             </ul>
             <div class="social">
-              <a href=""><img src="img/face.svg" alt="" /></a>&nbsp;
-              <a href=""><img src="img/Vk.svg" alt="" /></a>&nbsp;
-              <a href=""><img src="img/insta.svg" alt="" /></a>
+              <a href="" target="_blank"><img src="img/face.svg" alt="" /></a>&nbsp;
+              <a href="" target="_blank"><img src="img/insta.svg" alt="" /></a>
             </div>
           </div>
         </div>
@@ -74,7 +76,7 @@
                 Вы можете связаться с нами по телефону
                 <a href="tel+79312525010">+7(931) 252 50 10</a> или отправить
                 информацию на почту
-                <a href="mailto:volium1987@mail.ru">volium1987@mail.ru</a>
+                <a href="mailto:doglife.juji@gmail.com">doglife.juji@gmail.com</a>
               </p>
               <h3>Время работы, локация</h3>
               <p>
@@ -84,33 +86,52 @@
                 Петергофа.
               </p>
             </div>
-            <div class="contact-content__item">
-              <form
-                enctype="multipart/form-data"
-                method="post"
-                id="form"
-                onsubmit="send(event, 'mail.php')"
-              >
-                <h3>Отправить сообщение</h3>
-                <div class="inputbox">
-                  <input type="text" required name="user_name" />
-                  <span>Имя</span>
+            <div class="contact-content__item form">
+              <form action="#" id="form" class="form__body">
+                <h3 class="form__title">Отправить сообщение</h3>
+                <div class="form__item">
+                  <label for="formName" class="form__label">Имя*:</label>
+                  <input
+                    id="formName"
+                    type="text"
+                    name="name"
+                    class="form__input _req"
+                  />
                 </div>
-                <div class="inputbox">
-                  <input type="email" name="user_email" required />
-                  <span>Email</span>
+                <div class="form__item">
+                  <label for="formEmail" class="form__label"> Email*:</label>
+                  <input
+                    id="formEmail"
+                    type="text"
+                    name="email"
+                    class="form__input _req _email"
+                  />
                 </div>
-                <div class="inputbox">
-                  <input type="tel" name="user_phone" required />
-                  <span>Телефон</span>
+                <div class="form__item">
+                  <label for="formPhone" class="form__label">Phone*:</label>
+                  <input
+                    id="formPhone"
+                    type="text"
+                    name="phone"
+                    class="form__input _req"
+                  />
                 </div>
-                <div class="inputbox">
-                  <textarea name="message" id=""></textarea>
-                  <span>Сообщение</span>
+                <div class="form__item">
+                  <label for="formMessage" class="form__label"
+                    >Сообщение:</label
+                  >
+                  <textarea
+                    name="message"
+                    id="formMessage"
+                    class="form__input"
+                  ></textarea>
                 </div>
-                <div class="inputbox">
-                  <input type="submit" value="Отправить" />
-                </div>
+                <div class="form__item">
+                        <div class="checkbox">
+                            <input id="formAgreement" type="checkbox" checked name="agreement" class="checkbox__input _req">
+                            <label for="formAgreement" class="checkbox__label">Я согласен на обработку персональных данных в соответствии c требованиями ФЗ от 27.07.2006. №152-ФЗ</label>
+                        </div>
+                        <button type="submit" class="form__button swiper__button">Отправить</button>
               </form>
             </div>
           </div>
@@ -134,8 +155,8 @@
             <div class="footer__item">
               <ul class="connect">
                 <li>
-                  <a href="mailto:volium1987@mail.ru"
-                    ><i class="fas fa-envelope"></i> volium1987@mail.ru</a
+                  <a href="mailto:doglife.juji@gmail.com"
+                    ><i class="fas fa-envelope"></i> doglife.juji@gmail.com</a
                   >
                 </li>
                 <li>
@@ -151,9 +172,8 @@
                 >Задать вопрос</a
               >
               <div class="social">
-                <a href=""><img src="img/face.svg" alt="" /></a>&nbsp;
-                <a href=""><img src="img/Vk.svg" alt="" /></a>&nbsp;
-                <a href=""><img src="img/insta.svg" alt="" /></a>
+                <a href="" target="_blank"><img src="img/face.svg" alt="" /></a>&nbsp;
+                <a href="" target="_blank"><img src="img/insta.svg" alt="" /></a>
               </div>
             </div>
           </div>
@@ -162,6 +182,6 @@
         <p>copyright &copy; 2021 <span> &#9873; Vladimir Saenko</span></p>
       </footer>
     </div>
-    <script src="order.js"></script>
+    <script src="sendmail.js"></script>
   </body>
 </html>
